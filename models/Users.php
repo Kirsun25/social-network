@@ -76,6 +76,6 @@ class Users extends ActiveRecord implements IdentityInterface {
     }
 
     public function getMessages(){
-        return $this->hasMany(Messages::class, ['dialog_id' => 'dialog_id'])->viaTable('dialogs-users', ['user_id'=>'id']);
+        return $this->hasMany(Messages::class, ['dialog_id' => 'dialog_id'])->viaTable('dialogs_users', ['user_id'=>'id']);
     }
 }

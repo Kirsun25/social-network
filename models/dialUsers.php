@@ -15,7 +15,7 @@ class dialUsers extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'dialogs-users';
+        return 'dialogs_users';
     }
 
 //    public function getUsers(){
