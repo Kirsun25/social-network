@@ -18,19 +18,7 @@ class dialUsers extends ActiveRecord
         return 'dialogs_users';
     }
 
-//    public function getUsers(){
-//        return $this->hasOne(Users::class, ['id'=>'users_id']);
-//    }
-//
-//    public function getMessages(){
-//        return $this->hasOne(Messages::class, ['dialog_id'=>'dialog_id']);
-//    }
 
-//    public function returnLastMes($model){
-//        foreach ($model as $key=>$value){
-//          max()
-//        }
-//    }
 
     public function getMessages(){
         return $this->hasMany(Messages::class, ['dialog_id'=>'dialog_id']);
