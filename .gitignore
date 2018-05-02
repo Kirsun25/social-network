@@ -26,6 +26,9 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 
+web/uploads/orig_avatars/*
+web/uploads/resized_avatars/*
+
 tests/_output/*
 tests/_support/_generated
 

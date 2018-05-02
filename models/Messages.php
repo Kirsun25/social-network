@@ -6,6 +6,13 @@
  * Time: 21:58
  */
 
+/**
+ * This is the model class for table "messages".
+ *
+ * @property string $message
+ * @property integer $dialog_id
+ */
+
 namespace app\models;
 
 

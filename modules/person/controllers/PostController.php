@@ -6,11 +6,14 @@
  * Time: 19:04
  */
 
-namespace app\modules\person\controllers;
-use app\models\dialUsers;
-use app\models\SendForm;
 
+namespace app\modules\person\controllers;
+
+use app\models\AboutUser;
+use app\models\SendForm;
+use app\models\UploadForm;
 use app\models\Users;
+use yii\web\UploadedFile;
 use Yii;
 
 
@@ -19,9 +22,27 @@ use app\models\Messages;
 
 class PostController extends AppAdminController
 {
+
+
     public function actionIndex(){
+//        $model = Model::findOne(12);
+//        $model->attachImage('../../image.png');
 
         return $this->render('index');
+    }
+
+    public function actionUpload(){
+
+        $model = AboutUser::findOne(['user_id' => Yii::$app->user->getId()]);
+
+        if (Yii::$app->request->isPost) {
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+            if ($model->upload()) {
+                return $this->render('upload', ['model' => $model]);
+            }
+        }
+
+        return $this->render('upload', ['model' => $model]);
     }
 
     public function actionDialogs()

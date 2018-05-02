@@ -16,6 +16,7 @@ class MenuWidget extends Widget{
         <div>
             <div><a href='/person/post/dialogs'>мои сообщения</a></div>
             <div><a href='/person/post/chat'>чат</a></div>
+            <div><a href='/person/post/upload'>настройки</a></div>
         </div>";
 
 
